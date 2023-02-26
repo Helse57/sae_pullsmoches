@@ -1,0 +1,15 @@
+{
+  "name": "com.sae4.pullsmoches",
+  "displayName": "Pulls Moches",
+  "version": "1.0.0",
+  "description": "Un site de vente de Pulls Moches de Noël",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "THIEBAUT Hugo, THOMAS Elouan, SGARRA Lorenzo, SCHLEININGER Raphaël",
+  "license": "Apache-2.0"
+}
