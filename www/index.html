@@ -17,7 +17,20 @@
     <title>Test API</title>
   </head>
   <body>
-    <h1 class="text-primary">Hello, world!</h1>
+    <div class="container">
+      <h1 class="text-center mt-3">Régions de France</h1>
+      <div class="form-group mb-4">
+        <label for="code">Code de la région</label>
+        <input
+          type="text"
+          class="form-control mt-2"
+          id="code"
+          placeholder="Entrer le code"
+        />
+      </div>
+
+      <section id="carte"></section>
+    </div>
 
     <!-- Fichier JS de bootstrap -->
     <script
