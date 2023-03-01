@@ -2,11 +2,18 @@
 
 require("./connexionBDD.php");
 
-$res = $db->query("SELECT ref_art, nom_art, prix_u from articles where ref_art=" . $_GET["ref"]);
+$query = "SELECT a.num_art, a.nom_art, a.desc_art, a.prix, a.num_categ, c.nom_categ
+          FROM ARTICLE a, CATEGORIE c WHERE a.num_categ = c.num_categ";
+         
 
-while ($row = $res->fetch(PDO::FETCH_ASSOC)) {
-    $row['url'] = "https://devweb.iutmetz.univ-lorraine.fr/~thieba218u/sae_pullsmoches/assets/images/" . $row['ref_art'] . ".png";
-    $data = $row;
-}
+// Exécution de la requête
+$result = $db->query($query);
 
-echo json_encode($data);
+// Récupération des données dans un tableau associatif
+$data = $result->fetchAll(PDO::FETCH_ASSOC);
+
+// Conversion des données en JSON
+$json = json_encode($data);
+
+// Retour du JSON
+echo $json;
