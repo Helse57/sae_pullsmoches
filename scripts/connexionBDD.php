@@ -1,5 +1,5 @@
 <?php
-
+header("Access-Control-Allow-Origin: *");
 $db_config['SGBD'] = 'mysql';
 $db_config['HOST'] = 'devbdd.iutmetz.univ-lorraine.fr';
 $db_config['DB_NAME'] = 'thieba218u_pullsmoches';
