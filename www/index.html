@@ -1,12 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Week1</title>
-</head>
-<body>
-    <script src="./js/index.js"></script>
-</body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .banner-image {
+        background-image: url("./assets/banner.jpg");
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+      <div class="container">
+        <a href="#" class="navbar-brand">Winter Wonderful</a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-target="#navbarNav"
+          data-bs-toggle="collapse"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle Navbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="mx-auto"></div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white">Articles</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white">Se connecter</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white">S'inscrire</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center"
+    >
+      <div class="content text-content">
+        <h1 class="text-white">WINTER WONDERFUL</h1>
+      </div>
+    </div>
+
+    <div class="container my-5 d-grid gap-5">
+      <div class="p-5 border">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ad
+          cumque veritatis officiis quis porro modi! Possimus sequi perspiciatis
+          velit doloremque! Officia doloribus vel exercitationem nihil
+          voluptates ipsa consequuntur adipisci!
+        </p>
+      </div>
+      <div class="p-5 border">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ad
+          cumque veritatis officiis quis porro modi! Possimus sequi perspiciatis
+          velit doloremque! Officia doloribus vel exercitationem nihil
+          voluptates ipsa consequuntur adipisci!
+        </p>
+      </div>
+      <div class="p-5 border">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ad
+          cumque veritatis officiis quis porro modi! Possimus sequi perspiciatis
+          velit doloremque! Officia doloribus vel exercitationem nihil
+          voluptates ipsa consequuntur adipisci!
+        </p>
+      </div>
+      <div class="p-5 border">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ad
+          cumque veritatis officiis quis porro modi! Possimus sequi perspiciatis
+          velit doloremque! Officia doloribus vel exercitationem nihil
+          voluptates ipsa consequuntur adipisci!
+        </p>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var nav = document.querySelector("nav");
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 100) {
+          nav.classList.add("bg-dark", "shadow");
+        } else {
+          nav.classList.remove("bg-dark", "shadow");
+        }
+      });
+    </script>
+  </body>
 </html>
