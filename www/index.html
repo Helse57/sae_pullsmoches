@@ -4,25 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Week1</title>
+    <title>Winter Wonderful</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-
-    <style>
-      .banner-image {
-        background-image: url("./assets/banner.jpg");
-        background-size: cover;
-      }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3 righteous">
       <div class="container">
-        <a href="#" class="navbar-brand">Winter Wonderful</a>
+        <a href="./articles.html" class="navbar-brand">Winter Wonderful</a>
         <button
           type="button"
           class="navbar-toggler"
@@ -41,7 +36,7 @@
               <a href="#" class="nav-link text-white">Accueil</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link text-white">Articles</a>
+              <a href="./articles.html" class="nav-link text-white">Articles</a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link text-white">Se connecter</a>
@@ -57,59 +52,67 @@
       class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center"
     >
       <div class="content text-content">
-        <h1 class="text-white">WINTER WONDERFUL</h1>
+        <h1 class="text-white display-1 fw-bold righteous">WINTER WONDERFUL</h1>
+      </div>
+      <div class="scroll-down">
+        <a href="#content"><i class="fas fa-chevron-down"></i></a>
       </div>
     </div>
+    <div class="container my-5 gap-5">
+      <section class="container py-5">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h2>Bienvenue sur Winter Wonderful</h2>
+            <p>
+              Nous proposons une large sélection de vêtements de qualité à des
+              prix compétitifs. Que vous recherchiez de magnifique pulls moches,
+              des gants ou bonnets, vous trouverez tout ce dont vous avez besoin
+              dans notre boutique.
+            </p>
+            <p>
+              Nous sommes fiers de vous offrir un excellent service client et
+              une livraison rapide et fiable. N'hésitez pas à nous contacter si
+              vous avez des questions ou des commentaires.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="./assets/boutique.jpg"
+              alt="Image de la boutique"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </section>
+      <section id="lastArt">
+        <h2 class="text-center my-5">Derniers articles</h2>
+        <div class="row"></div>
+        <div class="row mt-5">
+          <div class="col text-center">
+            <a href="./articles.html" class="btn btn-secondary">Voir tous les articles</a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <p>© 2023 Winter Wonderful. Tous droits réservés.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-    <div class="container my-5 d-grid gap-5">
-      <div class="p-5 border">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ad
-          cumque veritatis officiis quis porro modi! Possimus sequi perspiciatis
-          velit doloremque! Officia doloribus vel exercitationem nihil
-          voluptates ipsa consequuntur adipisci!
-        </p>
-      </div>
-      <div class="p-5 border">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ad
-          cumque veritatis officiis quis porro modi! Possimus sequi perspiciatis
-          velit doloremque! Officia doloribus vel exercitationem nihil
-          voluptates ipsa consequuntur adipisci!
-        </p>
-      </div>
-      <div class="p-5 border">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ad
-          cumque veritatis officiis quis porro modi! Possimus sequi perspiciatis
-          velit doloremque! Officia doloribus vel exercitationem nihil
-          voluptates ipsa consequuntur adipisci!
-        </p>
-      </div>
-      <div class="p-5 border">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ad
-          cumque veritatis officiis quis porro modi! Possimus sequi perspiciatis
-          velit doloremque! Officia doloribus vel exercitationem nihil
-          voluptates ipsa consequuntur adipisci!
-        </p>
-      </div>
-    </div>
+    <!-- Script Bootstrap 5 -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script>
-      var nav = document.querySelector("nav");
-      window.addEventListener("scroll", () => {
-        if (window.pageYOffset > 100) {
-          nav.classList.add("bg-dark", "shadow");
-        } else {
-          nav.classList.remove("bg-dark", "shadow");
-        }
-      });
-    </script>
+
+    <!-- Scripts customs -->
+    <script src="js/navbar.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>

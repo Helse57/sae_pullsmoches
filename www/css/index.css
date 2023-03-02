@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.righteous {
+    font-family: 'Righteous', cursive;
+}
+
+.banner-image {
+  background-image: url("../assets/banner.jpg");
+  background-size: cover;
+}
+
+.banner-image {
+  position: relative;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.scroll-down a {
+  display: inline-block;
+  font-size: 2em;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.scroll-down a:hover {
+  transform: translateY(10px);
+}
