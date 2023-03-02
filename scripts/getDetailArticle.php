@@ -25,8 +25,13 @@ foreach ($data as $row) {
     $newData[] = $newRow;
 }
 
-// Conversion des données en JSON
-$json = json_encode($newData);
+$data_with_url = array_map(function ($item) {
+    $item["url"] = "https://devweb.iutmetz.univ-lorraine.fr/~thieba218u/sae/sae_pullsmoches/assets/images/{$item['ref_art']}.png";
+    return $item;
+}, $newData);
+
+// Conversion des données modifiées en JSON
+$json = json_encode($data_with_url);
 
 // Retour du JSON
 echo $json;
