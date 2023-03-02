@@ -68,95 +68,37 @@
             <div class="card-body">
               <form>
                 <div class="mb-3">
-                  <label for="filter-color" class="form-label">Couleur</label>
-                  <select class="form-select" id="filter-color">
-                    <option selected disabled>Choisir une couleur</option>
-                    <option value="rouge">Rouge</option>
-                    <option value="bleu">Bleu</option>
-                    <option value="jaune">Jaune</option>
+                  <label for="filter-colors" class="form-label">Couleur</label>
+                  <select class="form-select" id="filter-colors">
+                    <option selected disabled value="">Choisir une couleur</option>
                   </select>
                 </div>
                 <div class="mb-3">
-                  <label for="filter-size" class="form-label">Taille</label>
-                  <select class="form-select" id="filter-size">
-                    <option selected disabled>Choisir une taille</option>
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
+                  <label for="filter-sizes" class="form-label">Taille</label>
+                  <select class="form-select" id="filter-sizes">
+                    <option selected disabled value="">Choisir une taille</option>
                   </select>
                 </div>
                 <div class="mb-3">
-                  <label for="filter-category" class="form-label"
+                  <label for="filter-categories" class="form-label"
                     >Catégorie</label
                   >
-                  <select class="form-select" id="filter-category">
-                    <option selected disabled>Choisir une catégorie</option>
-                    <option value="pull">Pull</option>
-                    <option value="gant">Gant</option>
-                    <option value="bonnet">Bonnet</option>
+                  <select class="form-select" id="filter-categories">
+                    <option selected disabled value="">
+                      Choisir une catégorie
+                    </option>
                   </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Filtrer</button>
+                <button type="button" class="btn btn-primary" id="filtre">
+                  Filtrer
+                </button>
               </form>
             </div>
           </div>
         </div>
         <div class="col-lg-9">
-          <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-              <div class="card h-100">
-                <img
-                  src="https://via.placeholder.com/300x200"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Produit 1</h5>
-                  <p class="card-text">Description du produit 1.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100">
-                <img
-                  src="https://via.placeholder.com/300x200"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Produit 2</h5>
-                  <p class="card-text">Description du produit 2.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100">
-                <img
-                  src="https://via.placeholder.com/300x200"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Produit 3</h5>
-                  <p class="card-text">Description du produit 3.</p>
-                </div>
-              </div>
-            </div>
-            <!-- Ajoutez autant de cartes que vous souhaitez !-->
-            <div class="col">
-              <div class="card h-100">
-                <img
-                  src="https://via.placeholder.com/300x200"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Produit 10</h5>
-                  <p class="card-text">Description du produit 10.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <span id="errRech"></span>
+          <div class="row row-cols-1 row-cols-md-3 g-4" id="cardAdd"></div>
           <nav class="mt-3" aria-label="Navigation de pagination">
             <ul class="pagination justify-content-center">
               <li class="page-item disabled">
@@ -177,7 +119,7 @@
         </div>
       </div>
     </section>
-    <footer class="bg-light py-3">
+    <footer class="bg-dark text-light py-3">
       <div class="container">
         <div class="row">
           <div class="col text-center">
@@ -191,5 +133,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/articles.js" type="module"></script>
   </body>
 </html>

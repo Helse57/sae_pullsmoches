@@ -11,7 +11,13 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
@@ -55,11 +61,11 @@
         <h1 class="text-white display-1 fw-bold righteous">WINTER WONDERFUL</h1>
       </div>
       <div class="scroll-down">
-        <a href="#content"><i class="fas fa-chevron-down"></i></a>
+        <a href="#suite"><i class="fas fa-chevron-down"></i></a>
       </div>
     </div>
     <div class="container my-5 gap-5">
-      <section class="container py-5">
+      <section class="container py-5" id="suite">
         <div class="row align-items-center">
           <div class="col-md-6">
             <h2>Bienvenue sur Winter Wonderful</h2>
@@ -89,12 +95,14 @@
         <div class="row"></div>
         <div class="row mt-5">
           <div class="col text-center">
-            <a href="./articles.html" class="btn btn-secondary">Voir tous les articles</a>
+            <a href="./articles.html" class="btn btn-secondary"
+              >Voir tous les articles</a
+            >
           </div>
         </div>
       </section>
     </div>
-    <footer class="bg-light py-3">
+    <footer class="bg-dark text-light py-3">
       <div class="container">
         <div class="row">
           <div class="col text-center">
@@ -113,6 +121,6 @@
 
     <!-- Scripts customs -->
     <script src="js/navbar.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="./js/index.js" type="module"></script>
   </body>
 </html>
