@@ -2,9 +2,13 @@
 
 require("./connexionBDD.php");
 
-$query = "SELECT a.num_art, a.nom_art, a.desc_art, a.prix, a.num_categ, c.nom_categ
-          FROM ARTICLE a, CATEGORIE c WHERE a.num_categ = c.num_categ";
-
+if ($_GET["num_art"] != null) {
+    $query = "SELECT a.num_art, a.nom_art, a.desc_art, a.prix, a.num_categ, c.nom_categ
+              FROM ARTICLE a, CATEGORIE c WHERE a.num_categ = c.num_categ AND a.num_art = {$_GET["num_art"]}";
+} else {
+    $query = "SELECT a.num_art, a.nom_art, a.desc_art, a.prix, a.num_categ, c.nom_categ
+              FROM ARTICLE a, CATEGORIE c WHERE a.num_categ = c.num_categ";
+} 
 
 // Exécution de la requête
 $result = $db->query($query);
