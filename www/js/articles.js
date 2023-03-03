@@ -153,6 +153,10 @@ function creerCarte(couleur, taille, categorie) {
             });
         }
       });
+      if (data.length === 0) {
+        const err = document.querySelector("#errRech");
+        err.innerHTML = "Aucun article ne correspond à votre recherche";
+      }
     })
     .catch((error) => {
       console.error(error);
