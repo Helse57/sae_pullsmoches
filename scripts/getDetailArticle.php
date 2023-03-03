@@ -19,8 +19,8 @@ foreach ($data as $row) {
     $newRow = array(
         'ref_art' => $row['ref_art'],
         'num_art' => $row['num_art'],
-        'couleur' => array('couleur' => $row['couleur'], 'remise_couleur' => $row['remise_couleur']),
-        'taille' => array('taille' => $row['taille'], 'remise_taille' => $row['remise_taille'])
+        'couleur' => $row['couleur'],
+        'taille'  => $row['taille'],
     );
     $newData[] = $newRow;
 }
