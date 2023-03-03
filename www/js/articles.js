@@ -1,4 +1,4 @@
-createCard();
+creerCarte();
 
 function getAllData() {
   let categorieData = fetch(
@@ -63,89 +63,120 @@ getAllData().then((data) => {
   );
 });
 
-function filterItem(color, size) {
-  return fetch(
-    "https://devweb.iutmetz.univ-lorraine.fr/~thieba218u/sae/sae_pullsmoches/scripts/getArticle.php"
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      const test = [];
-      data.forEach((article) => {
-        test.push(
-          fetch(
-            `https://devweb.iutmetz.univ-lorraine.fr/~thieba218u/sae/sae_pullsmoches/scripts/getDetailArticle.php?num_art=${article.num_art}`
-          )
-            .then((response) => response.json())
-            .then((detail) => ({
-              detail: [...detail],
-              article: article,
-            }))
-        );
-      });
+function mergeData(couleur, taille, categorie) {
+  return new Promise((resolve, reject) => {
+    // Récupération des données de la première API
+    fetch(
+      "https://devweb.iutmetz.univ-lorraine.fr/~thieba218u/sae/sae_pullsmoches/scripts/getArticle.php"
+    )
+      .then((response) => response.json())
+      .then((data1) => {
+        // Récupération des données de la seconde API
+        fetch(
+          "https://devweb.iutmetz.univ-lorraine.fr/~thieba218u/sae/sae_pullsmoches/scripts/getDetailArticle.php"
+        )
+          .then((response) => response.json())
+          .then((data2) => {
+            // Fusion des données des deux API
+            const mergedData = data2.map((detail) => {
+              const matchingArticle = data1.find(
+                (article) => article.num_art === detail.num_art
+              );
+              return {
+                ...detail,
+                num_categ: matchingArticle.num_categ,
+                nom_categ: matchingArticle.nom_categ,
+              };
+            });
 
-      return Promise.all(test).then((articles) => {
-        if (!color && !size) {
-          return articles; // aucun tri
-        } else if (!color && size) {
-          return articles.filter((article) => {
-            return article.detail.some((detail) => {
-              return detail.taille && detail.taille.taille === size;
-            });
-          });
-        } else if (color && !size) {
-          return articles.filter((article) => {
-            return article.detail.some((detail) => {
-              return detail.couleur && detail.couleur.couleur === color;
-            });
-          });
-        } else {
-          return articles.filter((article) => {
-            return article.detail.some((detail) => {
+            // Filtrage des données en fonction des paramètres
+            const filteredData = mergedData.filter((item) => {
               return (
-                detail.couleur &&
-                detail.couleur.couleur === color &&
-                detail.taille &&
-                detail.taille.taille === size
+                (!couleur || item.couleur === couleur) &&
+                (!taille || item.taille === taille) &&
+                (!categorie || item.nom_categ === categorie)
               );
             });
+
+            // Tri des données filtrées en fonction des paramètres
+            filteredData.sort((a, b) => {
+              if (couleur) {
+                return a.couleur.localeCompare(b.couleur);
+              } else if (taille) {
+                return a.taille.localeCompare(b.taille);
+              } else if (categorie) {
+                return a.nom_categ.localeCompare(b.nom_categ);
+              }
+            });
+
+            resolve(filteredData); // Renvoi des données filtrées et triées
+          })
+          .catch((error) => {
+            reject(error); // Gestion des erreurs pour la seconde API
           });
+      })
+      .catch((error) => {
+        reject(error); // Gestion des erreurs pour la première API
+      });
+  });
+}
+
+function creerCarte(couleur, taille, categorie) {
+  mergeData(couleur, taille, categorie)
+    .then((data) => {
+      const cards = document.querySelector("#cardAdd");
+      let numDejaAjoutes = [];
+      data.forEach((item) => {
+        if (!numDejaAjoutes.includes(item.num_art)) {
+          numDejaAjoutes.push(item.num_art);
+          fetch(
+            `https://devweb.iutmetz.univ-lorraine.fr/~thieba218u/sae/sae_pullsmoches/scripts/getArticle.php?num_art=${item.num_art}`
+          )
+            .then((response) => response.json())
+            .then((article) => {
+              const card = `
+                <div class="card col-sm-12 col-md-5 col-lg-5 mx-auto my-4 mx-3" data-num="${article[0].num_art}">
+                  <img class="card-img-top w-50 mx-auto mt-3" src="${article[0].url}" alt="image-${article[0].num_art}">
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">${article[0].nom_art}</h5>
+                    <p class="card-text">${article[0].desc_art}</p>
+                    <div class="mt-auto">
+                      <a href="#" class="btn btn-primary justify-content-center">Voir les details</a>
+                    </div>
+                  </div>
+                </div>
+              `;
+              cards.innerHTML += card;
+            })
+            .catch((error) => {
+              console.error(error);
+            });
         }
       });
+    })
+    .catch((error) => {
+      console.error(error);
     });
 }
+
 const btnFiltre = document.querySelector("#filtre");
+const btnReset = document.querySelector("#reset");
 
 btnFiltre.addEventListener("click", () => {
   const color = couleur.value;
   const size = taille.value;
   const category = categorie.value;
   resetCard();
-  createCard(color, size, category);
+  creerCarte(color, size, category);
 });
 
-function createCard(color, size, category) {
-  const cards = document.querySelector("#cardAdd");
-  document.querySelector("#errRech").innerHTML = "";
-  filterItem(color, size).then((data) => {
-    if (data.length === 0)
-      document.querySelector("#errRech").innerHTML =
-        "<p class='text-center mb-5'>Aucun article ne correspond à votre recherche</p>";
-    data.forEach((article) => {
-      const card = `<div class="card col-sm-12 col-md-5 col-lg-3 mx-auto my-4" data-num="${article.article.num_art}">
-        <img class="card-img-top w-50 mx-auto mt-3" src="${article.article.url}" alt="image-${article.article.num_art}">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">${article.article.nom_art}</h5>
-          <p class="card-text">${article.article.desc_art}</p>
-          <div class="mt-auto">
-            <a href="#" class="btn btn-primary justify-content-center">Voir les details</a>
-          </div>
-        </div>
-      </div>
-      `;
-      cards.innerHTML += card;
-    });
-  });
-}
+btnReset.addEventListener("click", () => {
+  resetCard();
+  creerCarte();
+  couleur.value ="";
+  taille.value ="";
+  categorie.value ="";
+});
 
 function resetCard() {
   const cards = document.querySelector("#cardAdd");
