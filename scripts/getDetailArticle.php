@@ -5,8 +5,7 @@ require("./connexionBDD.php");
 $query = "SELECT d.ref_art, d.num_art, c.couleur, c.remise_couleur, t.taille, t.remise_taille
 FROM DETAIL_ARTICLE d
 JOIN COULEUR c ON d.num_col = c.num_col
-JOIN TALLE t ON d.num_taille = t.num_taille 
-WHERE d.num_art = " . $_GET["num_art"];
+JOIN TALLE t ON d.num_taille = t.num_taille";
 
 $result = $db->query($query);
 
