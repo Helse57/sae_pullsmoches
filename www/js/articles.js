@@ -184,5 +184,7 @@ btnReset.addEventListener("click", () => {
 
 function resetCard() {
   const cards = document.querySelector("#cardAdd");
+  const err = document.querySelector("#errRech");
+  err.innerHTML = "";
   cards.innerHTML = "";
 }

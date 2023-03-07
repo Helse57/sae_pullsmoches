@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/login.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <nav
+      class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3 righteous bg-dark mb-5"
+    >
+      <div class="container">
+        <a href="./index.html" class="navbar-brand">Winter Wonderful</a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-target="#navbarNav"
+          data-bs-toggle="collapse"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle Navbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="mx-auto"></div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link text-white">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a href="./articles.html" class="nav-link text-white">Articles</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white">Se connecter</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white">S'inscrire</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="container">
+          <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-6 mx-auto text-start">
+              <h1 class="text-center fw-bold mb-5">Connexion</h1>
+              <form>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Adresse email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Entrez votre adresse email"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Mot de passe</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Entrez votre mot de passe"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary text-start">Se connecter</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    <footer class="bg-dark text-light py-3 mt-5 fixed-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <p>© 2023 Winter Wonderful. Tous droits réservés.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
