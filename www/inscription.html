@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscription</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/inscription.css" />
+</head>
+
+<body>
+    <nav
+      class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3 righteous bg-dark mb-5"
+    >
+      <div class="container">
+        <a href="./index.html" class="navbar-brand">Winter Wonderful</a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-target="#navbarNav"
+          data-bs-toggle="collapse"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle Navbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="mx-auto"></div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link text-white">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a href="./articles.html" class="nav-link text-white">Articles</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white">Se connecter</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white">S'inscrire</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="all" class="container my-5 gap-5">
+        <section class="container py-5">
+            <h1 class="text-center fw-bold mb-5">Inscription</h1>
+            <form class="row g-3 mt-4">
+                <div class="col-md-6">
+                    <label for="nom" class="form-label">Nom</label>
+                    <input type="text" class="form-control" id="nom" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="prenom" class="form-label">Prénom</label>
+                    <input type="text" class="form-control" id="prenom" required>
+                </div>
+                
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Adresse e-mail</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="confirm-email" class="form-label">Confirmez Adresse e-mail</label>
+                    <input type="email" class="form-control" id="confirm-email" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="confirm-password" class="form-label">Confirmez votre mot de passe</label>
+                    <input type="password" class="form-control" id="confirm-password" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="civilite" class="form-label">Civilité</label>
+                    <select class="form-select" id="civilite" required>
+                        <option value="">Sélectionnez votre civilité</option>
+                        <option value="M">Monsieur</option>
+                        <option value="Mme">Madame</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary me-2">S'inscrire</button>
+                    <button type="button" class="btn btn-secondary">Se connecter</button>
+                </div>
+            </form>
+            
+        </section>
+    </div>
+    <footer class="bg-dark text-center py-3 text-white">
+        <p>
+            © 2023 Winter Wonderful - Tous droits réservés. Site fictif réalisé dans
+            le cadre d'un projet étudiant.
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pxtEOGOdZpYGhiJgH+IxrG57tQR21zrwlba+qdI8hx2q3bJw+L2xK5n5P5eJdX9C"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
