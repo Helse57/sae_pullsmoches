@@ -18,6 +18,7 @@ login.addEventListener("click", () => {
     .then((data) => {
       if (data.error === null) {
         window.sessionStorage.setItem("JWT_TOKEN", data.jwt);
+        window.location.href = "./index.html";
       }
     })
     .catch((error) => console.error(error));
