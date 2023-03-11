@@ -1,3 +1,5 @@
+verifyJWT();
+
 function createLastCard() {
   const secLastArt = document.querySelector("#lastArt .row");
   getLastArt().then((articles) => {
@@ -36,3 +38,17 @@ function getLastArt() {
 }
 
 createLastCard();
+
+function verifyJWT() {
+  return fetch(
+    "https://devweb.iutmetz.univ-lorraine.fr/~thieba218u/sae/sae_pullsmoches/scripts/JWT.php?jwt=" +
+      window.sessionStorage.getItem("JWT_TOKEN")
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      if(data.error !== null) {
+        sessionStorage.clear();
+      }
+    });
+}

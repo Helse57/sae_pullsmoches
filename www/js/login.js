@@ -1,21 +1,24 @@
-const email = "hugothiebaut22@gmail.com";
-const password = "test";
+const login = document.getElementById("login");
 
-fetch(
-  "https://devweb.iutmetz.univ-lorraine.fr/~thieba218u/sae/sae_pullsmoches/scripts/login.php",
-  {
-    method: "POST",
-    body: JSON.stringify({ email: email, password: password }),
-  }
-)
-  .then((response) => response.json())
-  .then((data) => {
-    if (data.length === 1) {
-      console.log("Connexion réussie");
-      document.cookie = `username=${data[0].login}`;
-      document.cookie = `user_id=${data[0].id_cl}`;
-    } else {
-      console.log("Connexion échouée");
+login.addEventListener("click", () => {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  fetch(
+    "https://devweb.iutmetz.univ-lorraine.fr/~thieba218u/sae/sae_pullsmoches/scripts/JWT.php",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
     }
-  })
-  .catch((error) => console.error(error));
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.error === null) {
+        window.sessionStorage.setItem("JWT_TOKEN", data.jwt);
+      }
+    })
+    .catch((error) => console.error(error));
+});
