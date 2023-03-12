@@ -1,3 +1,29 @@
+if (sessionStorage.getItem("JWT_TOKEN")) {
+  verifyJWT();
+  const navBar = document.querySelector("ul");
+  navBar.innerHTML += `<li class="nav-item">
+  <a href="#" class="nav-link text-white">Favoris</a>
+</li>
+  <li class="nav-item">
+  <a href="#" class="nav-link text-white">Panier</a>
+</li>
+  <li class="nav-item">
+  <a href="#" class="nav-link text-white">Profil</a>
+</li>
+  <li class="nav-item">
+  <a href="#" class="nav-link text-white">Se déconnecter</a>
+</li>`;
+} else {
+  const navBar = document.querySelector("ul");
+  navBar.innerHTML += `<li class="nav-item">
+  <a href="./login.html" class="nav-link text-white">Se connecter</a>
+</li>
+<li class="nav-item">
+  <a href="./inscription.html" class="nav-link text-white">S'inscrire</a>
+</li>`;
+}
+
+
 creerCarte();
 
 function getAllData() {
