@@ -23,7 +23,6 @@ if (sessionStorage.getItem("JWT_TOKEN")) {
 </li>`;
 }
 
-
 creerCarte();
 
 function getAllData() {
@@ -203,9 +202,9 @@ btnFiltre.addEventListener("click", () => {
 btnReset.addEventListener("click", () => {
   resetCard();
   creerCarte();
-  couleur.value ="";
-  taille.value ="";
-  categorie.value ="";
+  couleur.value = "";
+  taille.value = "";
+  categorie.value = "";
 });
 
 function resetCard() {
