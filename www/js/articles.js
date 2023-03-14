@@ -8,7 +8,7 @@ if (sessionStorage.getItem("JWT_TOKEN")) {
   <a href="#" class="nav-link text-white">Panier</a>
 </li>
   <li class="nav-item">
-  <a href="#" class="nav-link text-white">Profil</a>
+  <a href="#" class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">Profil</a>
 </li>
   <li class="nav-item">
   <a href="#" class="nav-link text-white">Se déconnecter</a>
